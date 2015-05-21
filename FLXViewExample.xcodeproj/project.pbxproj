@@ -13,6 +13,8 @@
 		5DA9C0D31B0E067D0089BCFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9C0D21B0E067D0089BCFA /* Images.xcassets */; };
 		5DA9C0D61B0E067D0089BCFA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9C0D41B0E067D0089BCFA /* LaunchScreen.xib */; };
 		5DA9C0E21B0E067D0089BCFA /* FLXViewExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9C0E11B0E067D0089BCFA /* FLXViewExampleTests.swift */; };
+		5DA9C0EF1B0E5B530089BCFA /* FLXView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA9C0EE1B0E5B530089BCFA /* FLXView.framework */; };
+		5DA9C0F01B0E5B530089BCFA /* FLXView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA9C0EE1B0E5B530089BCFA /* FLXView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5DA9C0F11B0E5B530089BCFA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5DA9C0F01B0E5B530089BCFA /* FLXView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5DA9C0C61B0E067D0089BCFA /* FLXViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLXViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA9C0CA1B0E067D0089BCFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +52,7 @@
 		5DA9C0DB1B0E067D0089BCFA /* FLXViewExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FLXViewExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA9C0E01B0E067D0089BCFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DA9C0E11B0E067D0089BCFA /* FLXViewExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLXViewExampleTests.swift; sourceTree = "<group>"; };
+		5DA9C0EE1B0E5B530089BCFA /* FLXView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLXView.framework; path = Carthage/Build/iOS/FLXView.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA9C0EF1B0E5B530089BCFA /* FLXView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +79,7 @@
 			children = (
 				5DA9C0C81B0E067D0089BCFA /* FLXViewExample */,
 				5DA9C0DE1B0E067D0089BCFA /* FLXViewExampleTests */,
+				5DA9C0ED1B0E5AEC0089BCFA /* Frameworks */,
 				5DA9C0C71B0E067D0089BCFA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +131,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5DA9C0ED1B0E5AEC0089BCFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DA9C0EE1B0E5B530089BCFA /* FLXView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +149,7 @@
 				5DA9C0C21B0E067D0089BCFA /* Sources */,
 				5DA9C0C31B0E067D0089BCFA /* Frameworks */,
 				5DA9C0C41B0E067D0089BCFA /* Resources */,
+				5DA9C0F11B0E5B530089BCFA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -342,6 +370,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FLXViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,6 +384,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FLXViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,6 +447,7 @@
 				5DA9C0E71B0E067D0089BCFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DA9C0E81B0E067D0089BCFA /* Build configuration list for PBXNativeTarget "FLXViewExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +456,7 @@
 				5DA9C0EA1B0E067D0089BCFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
