@@ -1,5 +1,5 @@
 # FLXViewExample
-The FLXView Example playground wrapped in an app.
+The [FLXView](https://github.com/robb/FLXView) Example playground wrapped in an app.
 
 ## Screenshots
 
